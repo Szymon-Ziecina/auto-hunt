@@ -20,5 +20,6 @@ router.get('/storage/*', [FilesController, 'index'])
 router
   .group(() => {
     router.get('/register', [RegisterController, 'index'])
+    router.post('/register', [RegisterController, 'store'])
   })
   .use(middleware.guest())

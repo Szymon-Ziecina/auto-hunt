@@ -1,6 +1,6 @@
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex justify-center items-center gap-8 bg-background-light min-h-screen">
+    <div className="flex justify-center items-center gap-24 bg-background-light min-h-screen">
       <div className="flex flex-col gap-4 justify-center items-center min-w-1/5">
         <img src="/storage/logo.svg" alt="Auto Hunt logo" />
         {children}
