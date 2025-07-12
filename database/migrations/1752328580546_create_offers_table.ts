@@ -38,6 +38,7 @@ export default class extends BaseSchema {
       table.string('vin_number').notNullable()
       table.integer('mileage').notNullable()
       table.text('description')
+      table.string('offer_address').notNullable()
 
       table.timestamp('sold_at')
       table.timestamp('created_at')

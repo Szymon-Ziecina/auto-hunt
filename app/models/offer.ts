@@ -42,6 +42,9 @@ export default class Offer extends BaseModel {
   @column()
   declare description: string | null
 
+  @column()
+  declare offerAddress: string
+
   @column.dateTime()
   declare soldAt: DateTime
 
