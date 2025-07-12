@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react'
+import { CarFront, ChevronDown, Heart, LogOut, UserRoundPen } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import { FormEvent } from 'react'
 const UserDropdown = ({ username }: { username: string }) => {
   const { post } = useForm()
 
-  function submit(e: FormEvent) {
+  function logOut(e: FormEvent) {
     e.preventDefault()
     post('/logout')
   }
@@ -22,17 +22,32 @@ const UserDropdown = ({ username }: { username: string }) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent onCloseAutoFocus={(e) => e.preventDefault()}>
         {/* todo: add rest of links */}
-        <DropdownMenuItem className="text-accent focus:text-accent">
-          <Link href="#">My Profile</Link>
+        <DropdownMenuItem>
+          <Link className="text-accent focus:text-accent flex gap-2 items-center" href="#">
+            <UserRoundPen className="text-accent" />
+            My Profile
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="text-accent focus:text-accent">
-          <Link href="#">My Cars</Link>
+        <DropdownMenuItem>
+          <Link className="text-accent focus:text-accent flex gap-2 items-center" href="#">
+            <CarFront className="text-accent" />
+            My Cars
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="text-accent focus:text-accent">
-          <Link href="#">My Favourite Cars</Link>
+        <DropdownMenuItem>
+          <Link className="text-accent focus:text-accent flex gap-2 items-center" href="#">
+            <Heart className="text-accent" />
+            My Favourite Cars
+          </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="text-accent focus:text-accent">
-          <button onClick={submit}>Log out</button>
+        <DropdownMenuItem>
+          <button
+            className="text-accent focus:text-accent flex gap-2 items-center"
+            onClick={logOut}
+          >
+            <LogOut className="text-accent" />
+            Log out
+          </button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
