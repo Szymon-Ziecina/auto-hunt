@@ -8,7 +8,7 @@ type Options = {
 }
 
 async function isUnique(value: unknown, options: Options, field: FieldContext) {
-  if (typeof value !== 'string' || typeof value !== 'number') return
+  if (typeof value !== 'string' && typeof value !== 'number') return
 
   const result = await db
     .from(options.table)
